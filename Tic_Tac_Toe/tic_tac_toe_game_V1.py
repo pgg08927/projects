@@ -3,6 +3,7 @@ board=["-","-","-",
        "-","-","-",
        "-","-","-"]
 
+# function to display board
 def display_board():
     print(board[0]+ " | "+ board[1]+ " | "+ board[2])
     print(board[3]+ " | "+ board[4]+ " | "+ board[5])
@@ -18,7 +19,7 @@ game_still_going=True
 print(f"{current_player}'s turn")
 inp_num=0
 
-
+# taking input from player
 def take_input():
     global current_player
     global inp_num
@@ -30,6 +31,7 @@ def take_input():
     return inp_num
 
 
+# updating board
 def update_board():
     global inp_num
     while board[inp_num-1]!="-":
@@ -39,7 +41,7 @@ def update_board():
         board[inp_num - 1] =current_player
     display_board()
 
-
+# checking for tie
 def check_for_tie():
     global game_still_going
     if game_still_going:
@@ -49,7 +51,7 @@ def check_for_tie():
         else:
             game_still_going=True
 
-
+# checking for win
 def check_for_win():
     global game_still_going
     if game_still_going:
@@ -70,7 +72,7 @@ def check_for_win():
         else:
             game_still_going=True
 
-
+# changing turn
 def flip_player():
     global current_player
     if current_player=='X':
